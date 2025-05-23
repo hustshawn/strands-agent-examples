@@ -7,30 +7,39 @@ This repository contains demo implementations using the Strands Agents SDK, a mo
 Before running these demos, you need to install the Strands Agents SDK:
 
 ```bash
-pip install strands-agents strands-agents-tools
+pip install -r requirements.txt
 ```
 
 For the default Amazon Bedrock model provider, you'll need AWS credentials configured and model access enabled for Claude 3.7 Sonnet in the us-west-2 region. See the [Quickstart Guide](https://strandsagents.com/) for details on configuring other model providers.
 
-## Development Container
+## Development Environment
 
-This repository includes a development container configuration for Visual Studio Code. This allows you to develop in a containerized environment with all the necessary dependencies pre-installed.
+This repository includes a devcontainer configuration for Visual Studio Code, which provides a consistent development environment with all required dependencies.
 
-### Requirements
+### Using VS Code Devcontainers
 
-- [Docker](https://www.docker.com/products/docker-desktop)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for VS Code
+1. Install [Visual Studio Code](https://code.visualstudio.com/) and the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension.
+2. Clone this repository and open it in VS Code.
+3. When prompted, click "Reopen in Container" or run the "Remote-Containers: Reopen in Container" command from the command palette.
+4. VS Code will build the container and set up the development environment automatically.
 
-### Getting Started with the Dev Container
+### Using Docker Compose
 
-1. Clone this repository
-2. Open the repository in VS Code
-3. When prompted, click "Reopen in Container" or use the command palette (F1) and select "Remote-Containers: Reopen in Container"
-4. The container will be built and started, and VS Code will connect to it
-5. All the required dependencies will be automatically installed
+Alternatively, you can use Docker Compose to run the development environment:
 
-For more information, see the [.devcontainer/README.md](.devcontainer/README.md) file.
+```bash
+docker-compose up -d
+docker-compose exec app bash
+```
+
+### Environment Variables
+
+Copy the `.env.example` file to `.env` and fill in your AWS credentials:
+
+```bash
+cp .env.example .env
+# Edit .env with your credentials
+```
 
 ## Demo Scripts
 

@@ -1,2 +1,6 @@
-strands-agents
-strands-agents-tools
+strands-agents==0.5.2
+strands-agents-tools==0.3.1
+typing-extensions==4.7.1
+pydantic==2.4.2
+python-dotenv==1.0.0
+requests==2.31.0
