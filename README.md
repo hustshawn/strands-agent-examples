@@ -12,6 +12,26 @@ pip install strands-agents strands-agents-tools
 
 For the default Amazon Bedrock model provider, you'll need AWS credentials configured and model access enabled for Claude 3.7 Sonnet in the us-west-2 region. See the [Quickstart Guide](https://strandsagents.com/) for details on configuring other model providers.
 
+## Development Container
+
+This repository includes a development container configuration for Visual Studio Code. This allows you to develop in a containerized environment with all the necessary dependencies pre-installed.
+
+### Requirements
+
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for VS Code
+
+### Getting Started with the Dev Container
+
+1. Clone this repository
+2. Open the repository in VS Code
+3. When prompted, click "Reopen in Container" or use the command palette (F1) and select "Remote-Containers: Reopen in Container"
+4. The container will be built and started, and VS Code will connect to it
+5. All the required dependencies will be automatically installed
+
+For more information, see the [.devcontainer/README.md](.devcontainer/README.md) file.
+
 ## Demo Scripts
 
 This repository includes three demo scripts:
