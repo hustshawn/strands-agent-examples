@@ -1,9 +1,6 @@
 {
     "name": "Strands Agents Demo",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
-    },
+    "dockerFile": "Dockerfile",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -18,9 +15,7 @@
                 "python.linting.pylintEnabled": true,
                 "python.formatting.provider": "black",
                 "editor.formatOnSave": true,
-                "editor.codeActionsOnSave": {
-                    "source.organizeImports": true
-                }
+                "python.testing.pytestEnabled": true
             }
         }
     },

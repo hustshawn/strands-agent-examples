@@ -2,32 +2,35 @@
 
 This repository contains demo implementations using the Strands Agents SDK, a model-driven approach to building AI agents in just a few lines of code.
 
-## Prerequisites
+## Development Environment
 
-Before running these demos, you need to install the Strands Agents SDK:
+### Using Dev Containers (Recommended)
+
+This repository includes a devcontainer configuration for Visual Studio Code, which provides a consistent development environment with all dependencies pre-installed.
+
+**Prerequisites:**
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+
+**Steps:**
+1. Clone this repository
+2. Open the repository in Visual Studio Code
+3. When prompted, click "Reopen in Container"
+   - Alternatively, press F1, type "Remote-Containers: Reopen in Container"
+4. Wait for the container to build and initialize
+
+The container includes all necessary dependencies and development tools.
+
+### Manual Setup
+
+If you prefer not to use Dev Containers, you can manually install the dependencies:
 
 ```bash
-pip install strands-agents strands-agents-tools
+pip install -r requirements.txt
 ```
 
 For the default Amazon Bedrock model provider, you'll need AWS credentials configured and model access enabled for Claude 3.7 Sonnet in the us-west-2 region. See the [Quickstart Guide](https://strandsagents.com/) for details on configuring other model providers.
-
-## Development with DevContainers
-
-This repository includes DevContainers configuration for a smooth local development experience:
-
-1. Install [Visual Studio Code](https://code.visualstudio.com/) and the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-2. Clone this repository
-3. Open the repository in VS Code
-4. When prompted, click "Reopen in Container" or run the "Dev Containers: Reopen in Container" command
-
-The DevContainer includes:
-- Python 3.10 environment
-- All required dependencies pre-installed
-- Code formatting and linting tools
-- Jupyter notebook support
-
-You can modify the container configuration in the `.devcontainer` directory.
 
 ## Demo Scripts
 
@@ -67,6 +70,21 @@ A system with multiple specialized agents:
 Run with:
 ```bash
 python multi_agent_system.py
+```
+
+## Running Tests
+
+This repository includes unit tests for the demo agents. To run the tests:
+
+```bash
+# Run all tests
+pytest
+
+# Run tests with coverage report
+pytest --cov=.
+
+# Run tests for a specific module
+pytest tests/test_demo_agent.py
 ```
 
 ## Example Usage

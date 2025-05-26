@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Set up a non-root user
+# Create a non-root user
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
@@ -20,23 +20,16 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
 # Set up Python environment
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1
+RUN pip install --upgrade pip setuptools wheel
 
-# Install pip and upgrade it
-RUN pip install --upgrade pip
+# Install development tools
+RUN pip install pytest pytest-cov black pylint
 
-# Create workspace directory with correct permissions
+# Set the working directory
 WORKDIR /workspace
-RUN chown -R $USERNAME:$USERNAME /workspace
 
 # Switch to non-root user
 USER $USERNAME
 
-# Install Python packages from requirements.txt at container build time
-# This will be overridden by postCreateCommand if requirements.txt changes
-COPY --chown=$USERNAME:$USERNAME requirements.txt /tmp/
-RUN pip install --user -r /tmp/requirements.txt
-
-# Add .local/bin to PATH
-ENV PATH="/home/$USERNAME/.local/bin:${PATH}"
+# Set Python path
+ENV PYTHONPATH=/workspace:$PYTHONPATH
