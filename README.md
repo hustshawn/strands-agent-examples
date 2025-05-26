@@ -12,6 +12,23 @@ pip install strands-agents strands-agents-tools
 
 For the default Amazon Bedrock model provider, you'll need AWS credentials configured and model access enabled for Claude 3.7 Sonnet in the us-west-2 region. See the [Quickstart Guide](https://strandsagents.com/) for details on configuring other model providers.
 
+## Development with DevContainers
+
+This repository includes DevContainers configuration for a smooth local development experience:
+
+1. Install [Visual Studio Code](https://code.visualstudio.com/) and the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+2. Clone this repository
+3. Open the repository in VS Code
+4. When prompted, click "Reopen in Container" or run the "Dev Containers: Reopen in Container" command
+
+The DevContainer includes:
+- Python 3.10 environment
+- All required dependencies pre-installed
+- Code formatting and linting tools
+- Jupyter notebook support
+
+You can modify the container configuration in the `.devcontainer` directory.
+
 ## Demo Scripts
 
 This repository includes three demo scripts:

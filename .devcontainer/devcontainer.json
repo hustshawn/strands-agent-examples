@@ -1,0 +1,30 @@
+{
+    "name": "Strands Agents Demo",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.black-formatter",
+                "ms-toolsai.jupyter"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true,
+                "python.formatting.provider": "black",
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": true
+                }
+            }
+        }
+    },
+    "forwardPorts": [],
+    "postCreateCommand": "pip install -r requirements.txt",
+    "remoteUser": "vscode"
+}
