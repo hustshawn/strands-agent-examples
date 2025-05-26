@@ -7,10 +7,28 @@ This repository contains demo implementations using the Strands Agents SDK, a mo
 Before running these demos, you need to install the Strands Agents SDK:
 
 ```bash
-pip install strands-agents strands-agents-tools
+pip install -r requirements.txt
 ```
 
 For the default Amazon Bedrock model provider, you'll need AWS credentials configured and model access enabled for Claude 3.7 Sonnet in the us-west-2 region. See the [Quickstart Guide](https://strandsagents.com/) for details on configuring other model providers.
+
+## Development with Dev Containers
+
+This repository includes a Dev Containers configuration for a smooth development experience. Dev Containers provide a consistent, isolated environment with all necessary dependencies pre-installed.
+
+### Requirements
+
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [VS Code Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+
+### Getting Started with Dev Containers
+
+1. Clone this repository
+2. Open the repository in VS Code
+3. When prompted, click "Reopen in Container" or run the "Remote-Containers: Reopen in Container" command from the Command Palette
+4. VS Code will build the container and set up the development environment
+5. Once the container is built, you can run the demo scripts directly from the terminal
 
 ## Demo Scripts
 

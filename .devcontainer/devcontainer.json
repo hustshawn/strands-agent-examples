@@ -1,0 +1,29 @@
+{
+    "name": "Strands Agents Development",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.black-formatter",
+                "ms-toolsai.jupyter"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true,
+                "python.formatting.provider": "black",
+                "editor.formatOnSave": true,
+                "editor.rulers": [88],
+                "python.testing.pytestEnabled": true
+            }
+        }
+    },
+    "forwardPorts": [],
+    "postCreateCommand": "pip install -e .",
+    "remoteUser": "vscode"
+}
