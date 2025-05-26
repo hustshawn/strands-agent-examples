@@ -20,7 +20,7 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual Environment
+# Virtual environments
 venv/
 env/
 ENV/
@@ -31,10 +31,6 @@ ENV/
 *.swp
 *.swo
 
-# Testing
-.coverage
-htmlcov/
-.pytest_cache/
-
-# Misc
+# OS specific
 .DS_Store
+Thumbs.db
